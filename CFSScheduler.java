@@ -19,7 +19,7 @@ public class CFSScheduler
 		float maxExecutionTime = 0;
 		List<String> snapshotRBTree = new ArrayList<String>();
 		
-		if(prcArray.size() < 50)
+		if(prcArray.size() <= 50)
 		{
 			getExecProcFlag = true;
 		}
@@ -53,7 +53,7 @@ public class CFSScheduler
 //				System.out.println("Spent Time: " + pSpentTime);
 //				System.out.println("Total Execution Time: " + pTotalExecTime);
 //				System.out.println("Waiting Time: " + (0));
-//				System.out.println("Unfairness score: " + 0 + "\n");
+//				System.out.println("Unfairness score: " + pSpentTime + "\n");
 				
 			}
 			else

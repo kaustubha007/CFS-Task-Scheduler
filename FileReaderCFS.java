@@ -16,14 +16,14 @@ public class FileReaderCFS
 		try 
 		{
 			Map dictOutput = new HashMap();
-//			Scanner in = new Scanner(System.in);
-//			String inputFile = in.nextLine();
-//			Integer snapShotTimeUnit = (Integer)in.nextInt();
-//			in.close();
+			Scanner in = new Scanner(System.in);
+			String inputFile = in.nextLine();
+			Integer snapShotTimeUnit = (Integer)in.nextInt();
+			in.close();
 			List<ArrayList<Integer>> prcArrayRBT = new ArrayList<ArrayList<Integer>>();
-//			File file = new File(inputFile);
-			File file = new File("flat4.txt");
-			Integer snapShotTimeUnit = 40;
+			File file = new File(inputFile);
+//			File file = new File("flat4.txt");
+//			Integer snapShotTimeUnit = 0;
 			FileReader fileReader = new FileReader(file);
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
 			StringBuffer stringBuffer = new StringBuffer();
@@ -56,6 +56,10 @@ public class FileReaderCFS
 			
 			List<ArrayList<Integer>> prcArrayHeap = new ArrayList<ArrayList<Integer>>(prcArrayRBT);
 			
+			if(prcArrayRBT.size() > 50)
+			{
+				snapShotTimeUnit = 0;
+			}
 			CFSScheduler schedulerObj = new CFSScheduler(); 
 //			System.out.println("************Executing scheduler with red black tree************\n");
 			long startTimeRBT = System.nanoTime();
