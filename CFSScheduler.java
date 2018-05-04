@@ -133,7 +133,7 @@ public class CFSScheduler
 		float pSpentTime = 0;
 		float maxExecutionTime = 0;
 		
-		if(prcArray.size() < 50)
+		if(prcArray.size() <= 50)
 		{
 			getExecProcFlag = true;
 		}
